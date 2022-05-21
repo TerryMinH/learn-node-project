@@ -2,15 +2,25 @@
  * @Author: TerryMin
  * @Date: 2022-05-19 15:43:01
  * @LastEditors: TerryMin
- * @LastEditTime: 2022-05-19 15:48:03
+ * @LastEditTime: 2022-05-20 10:47:05
  * @Description: file not
  */
 const http = require('http');
+let s = '';
+for (let i = 0; i < 1024 * 10; i++) {
+    s += 'a'
+}
 
-const app = http.createServer((req, res) => {
-    res.writeHead(200, { 'content-type': 'utf-8' });
-    res.end('hello world')
-})
-app.listen(host, () => {
-    console.log(`启动端口:` + 'http://127.0.0.1:8080')
-})
+const str = s;
+const bufStr = Buffer.from(s);
+const server = http.createServer((req, res) => {
+    console.log(req.url);
+
+    if (req.url === '/buffer') {
+        res.end(bufStr);
+    } else if (req.url === '/string') {
+        res.end(str);
+    }
+});
+
+server.listen(3000);
