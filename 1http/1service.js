@@ -2,25 +2,20 @@
  * @Author: TerryMin
  * @Date: 2022-05-19 15:43:01
  * @LastEditors: TerryMin
- * @LastEditTime: 2022-05-20 10:47:05
+ * @LastEditTime: 2022-05-31 07:06:16
  * @Description: file not
  */
-const http = require('http');
-let s = '';
-for (let i = 0; i < 1024 * 10; i++) {
-    s += 'a'
-}
+const process=require('process');
 
-const str = s;
-const bufStr = Buffer.from(s);
-const server = http.createServer((req, res) => {
-    console.log(req.url);
+process.on('uncaughtException',function(err){
+  console.log('Caught exception:'+err)
+})
 
-    if (req.url === '/buffer') {
-        res.end(bufStr);
-    } else if (req.url === '/string') {
-        res.end(str);
-    }
-});
+setTimeout(function(){
+  console.log('This will still run')
+},500);
 
-server.listen(3000);
+nonexistentFunc();
+console.log('This is not run ');
+
+
