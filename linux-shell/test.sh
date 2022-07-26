@@ -1,16 +1,8 @@
-
-###
- # @Author: TerryMin
- # @Date: 2022-06-26 08:45:26
- # @LastEditors: TerryMin
- # @LastEditTime: 2022-06-29 10:10:04
- # @Description: shell脚本执行 sh shellFileName.sh
-### 
-
 #!/bin/bash
 
-source ./test2.sh
-echo "另一个文件地址：$url"
+# source ./test2.sh
+echo "另一个文件地址：33"
+# echo "另一个文件地址：$url"
 
 
 # demoFun(){

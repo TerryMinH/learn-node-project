@@ -2,20 +2,14 @@
  * @Author: TerryMin
  * @Date: 2022-05-19 15:43:01
  * @LastEditors: TerryMin
- * @LastEditTime: 2022-05-31 07:06:16
+ * @LastEditTime: 2022-07-25 15:23:12
  * @Description: file not
  */
-const process=require('process');
+const fs=require('fs');
+// const fileNames=fs.readdirSync('./3.2BFF/');
 
-process.on('uncaughtException',function(err){
-  console.log('Caught exception:'+err)
-})
-
-setTimeout(function(){
-  console.log('This will still run')
-},500);
-
-nonexistentFunc();
-console.log('This is not run ');
+// console.log(fileNames);
+console.log(process.cwd());
+console.log(__dirname);
 
 
