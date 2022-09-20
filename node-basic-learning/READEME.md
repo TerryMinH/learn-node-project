@@ -1,0 +1,25 @@
+<!--
+ * @Author: TerryMin
+ * @Date: 2022-05-31 09:09:32
+ * @LastEditors: TerryMin
+ * @LastEditTime: 2022-09-20 15:20:04
+ * @Description: file not
+-->
+
+# Node学习
+
+1. (fs基本使用)[https://blog.csdn.net/github_38140984/article/details/83006101]
+
+2. readFile与 createReadStream函数区别
+- readFile: 函数异步读取文件的全部内容，并存储在内存中，然后再传递给用户。
+- createReadStream: 使用一个可读的流，逐块读取文件，而不是全部存储在内存中。
+- 与 readFile 相比，createReadStream 使用更少的内存和更快的速度来优化文件读取操作。如果文件相当大，用户不必等待很长时间直到读取整个内容，因为读取时会先向用户发送小块内容。
+
+3. path: path是nodeJS的一个内置模块，可以直接在其他js文件中导入改模块
+```js
+var path = require("path");
+const p = path.resolve("./","demo","img");
+console.log(p);
+```
+- __dirname， 在所有情况下，该变量都表示当前运行的js文件所在的目录，它是一个绝对路径。
+- 当我们使用path.resolve()拼接路径时，会遇到需要使用绝对路径的情况，但是当我们把项目部署到服务器时，绝对路径会发生变化。因此，需要一个可以计算的绝对路径的表达方式。有了__dirname，我们就可以解决以下问题
