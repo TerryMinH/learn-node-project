@@ -2,7 +2,7 @@
  * @Author: TerryMin
  * @Date: 2022-05-20 10:22:36
  * @LastEditors: TerryMin
- * @LastEditTime: 2022-05-21 14:53:12
+ * @LastEditTime: 2022-09-20 17:10:15
  * @Description: file not
 -->
 
@@ -21,5 +21,3 @@ Buffer(Nodejs中的缓冲区)[https://juejin.cn/post/6844903897438371847#heading
 
 
 
-# 资料推荐
-《Nodejs 技术栈》[https://www.nodejs.red/#/nodejs/practice/enterprise]
