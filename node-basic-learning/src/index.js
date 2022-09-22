@@ -2,13 +2,15 @@
  * @Author: TerryMin
  * @Date: 2021-12-11 15:38:01
  * @LastEditors: TerryMin
- * @LastEditTime: 2022-09-20 18:02:03
+ * @LastEditTime: 2022-09-22 14:28:10
  * @Description: file not
  */
 const fs = require("fs");
 const path = require("path");
 const util = require("util");
+const moduleObj = require("./util-index");
 
+console.log(moduleObj);
 // 将目录解析成绝对路径
 const resolvePath = (dir) => {
   // console.log(__dirname);
@@ -108,4 +110,52 @@ const writeStream = () => {
 // writeStream();
 // -----------------------------------------
 
+// 文件读写
+const handleFile = () => {
+  fs.access("./dataBase/a.txt", fs.constants.F_OK, (err) => {
+    console.log(err ? "文件不存在" : "文件存在");
+    if (err) {
+      fs.writeFile("./dataBase/a.txt", "hello Terrymin", (err) => {
+        if (err) console.log(err);
+        const result = fs.readFileSync("./dataBase/a.txt");
+        console.log(result);
+      });
+    } else {
+      fs.unlinkSync("./dataBase/a.txt");
+    }
+  });
+
+  fs.writeFileSync("./dataBase/b.txt", "测试数据");
+  fs.appendFile("./dataBase/b.txt", "这是追加写入的内容\n", (err) => {
+    if (err) console.log(err);
+    console.log("追加成功");
+  });
+};
+
+// 文件夹目录创建删除
+const handleDir = () => {
+  const states = fs.existsSync("./dataBase/css");
+  console.log(states);
+  if (!states) {
+    fs.mkdir("./dataBase/css", (err) => {
+      if (err) {
+        console.log(err);
+        return false;
+      }
+      console.log("创建成功");
+      const files = fs.readdirSync(__dirname);
+      console.log('读取文件目录:',files);
+    });
+  } else {
+    console.log("目录已存在");
+    fs.rmdir("./dataBase/css", (err) => {
+      if (err) {
+        console.log(err);
+        return false;
+      }
+      console.log("删除目录成功");
+    });
+  }
+};
+handleDir();
 

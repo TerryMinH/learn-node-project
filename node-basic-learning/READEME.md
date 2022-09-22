@@ -2,7 +2,7 @@
  * @Author: TerryMin
  * @Date: 2022-05-31 09:09:32
  * @LastEditors: TerryMin
- * @LastEditTime: 2022-09-20 17:10:10
+ * @LastEditTime: 2022-09-22 10:26:39
  * @Description: file not
 -->
 # 资料推荐
@@ -27,6 +27,11 @@ console.log(p);
 - __dirname， 在所有情况下，该变量都表示当前运行的js文件所在的目录，它是一个绝对路径。
 - 当我们使用path.resolve()拼接路径时，会遇到需要使用绝对路径的情况，但是当我们把项目部署到服务器时，绝对路径会发生变化。因此，需要一个可以计算的绝对路径的表达方式。有了__dirname，我们就可以解决以下问题
 - [path模块中resolve()与join区别](https://www.jb51.net/article/149676.htm)
+
+
+4. [基于Http-service快速搭建本地服务](https://blog.csdn.net/weixin_45932733/article/details/115861292)
+
+5.
 
 
 
