@@ -2,7 +2,7 @@
  * @Author: TerryMin
  * @Date: 2021-12-14 14:24:04
  * @LastEditors: TerryMin
- * @LastEditTime: 2022-09-22 11:36:43
+ * @LastEditTime: 2022-09-23 19:10:27
  * @Description: file not
 -->
 <!DOCTYPE html>
@@ -16,9 +16,63 @@
 
   <body></body>
   <script>
-    const obj = { name: "TerryMin", age: 12, sex: "boy" };
-    for(const ele in obj){
-      console.log(ele);
-    }
+    const isDate = (value) => {
+      if (!value) return false;
+      return (
+        typeof value.getTime === "function" &&
+        typeof value.getMonth === "function" &&
+        typeof value.getYear === "function"
+      );
+    };
+
+    const isObject = (value) => {
+      return Object.prototype.toString.call(value) === "[object Object]";
+    };
+    const isArray = (value) => {
+      return Object.prototype.toString.call(value) === "[object Array]";
+    };
+
+    const obj = { name: "TerryMin", age: 12, sex: "boy", secondObj: [123, 4] };
+
+    /**
+     * 前端传递: requestBody + sign + encodeUrlStr
+     * 后端获取到requestBody和sign: 自己生成 backSign 与前端sign 对比; 如果backSign==sign 通过, 反之不通过
+     * 
+     * 具体流程
+     * 签名sign生成规则:
+     * 拼接对象为请求字符串: 加密参数必须是对象,加密规则：
+     * 1 将对象转成字符串&格式拼接
+     * 2 当对象属性是 对象 数组 日期类型  格式 定义为一个字符串 如:'MIGUPROJECT'
+     * 3 参数转换成字符串格式后 使用encodeURIComponent编码生成字符串 encodeUrlStr
+     * 4 sign=md5(encodeUrlStr)
+     */
+    const encodeSearchParams = (obj) => {
+      if (!isObject(obj)) {
+        console.log("参数必须为Object");
+        return "";
+      }
+
+      let upperObj = {};
+      let sortObjToString = "";
+      Object.keys(obj).forEach((key) => {
+        if ((obj[key] || obj[key] === 0) && !isDate(obj[key])) {
+          upperObj[key] =
+            isObject(obj[key]) || isArray(obj[key]) || isDate(obj[key])
+              ? "MIGUPROJECT"
+              : obj[key] + "";
+        }
+      });
+      const sortKeys = Object.keys(upperObj);
+      const LEN = sortKeys.length - 1;
+      sortKeys.forEach((key, index) => {
+        sortObjToString += upperObj[key]
+          ? `${key}=${upperObj[key]}${index < LEN ? "&" : ""}`
+          : ``;
+      });
+      console.log(sortObjToString);
+      return encodeURIComponent(sortObjToString);
+    };
+
+    console.log(encodeSearchParams(obj));
   </script>
 </html>
