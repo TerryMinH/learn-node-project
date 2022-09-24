@@ -2,42 +2,23 @@
  * @Author: TerryMin
  * @Date: 2022-09-23 15:23:51
  * @LastEditors: TerryMin
- * @LastEditTime: 2022-09-23 15:34:20
+ * @LastEditTime: 2022-09-24 10:21:48
  * @Description: file not
  */
-const obj = {
-  test: {
-    inner: {
-      body: {
-        data: {
-          arr: [
-            1,
-            {
-              v: 2,
-            },
-          ],
-          str: "test",
-        },
-      },
+let obj = new Proxy(
+  {},
+  {
+    get: (target, propKey, receiver) => {
+      console.log(11, target, propKey, receiver);
+      return Reflect.get(target, propKey, receiver);
     },
-  },
-  lang: "中文",
-  count: 2,
-  obj: {
-    id: 1,
-    tags: ["member", "newUser", "diamond"],
-    data: {
-      key: "value",
-      date: "2022-09-23 10:00:00.000",
-      url: "http://www.baidu.com",
-      special: "a&b&c",
+    set: (target, propKey, value, receiver) => {
+      console.log(target, propKey, value, receiver);
+      return Reflect.set(target, propKey, value, receiver);
     },
-  },
-};
-
-const obj2 = {
-  data: [1, { name: "Terrymin",sex:'男' }],
-};
-console.log(obj2.data);
-console.log(obj2.data[1].name);
-console.log(obj2.data[1].sex);
+  }
+);
+obj.count = 1;
+obj.name = "zhsan";
+obj.count++;
+// ++obj.count;

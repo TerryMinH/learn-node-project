@@ -2,7 +2,7 @@
  * @Author: TerryMin
  * @Date: 2022-09-22 15:18:15
  * @LastEditors: TerryMin
- * @LastEditTime: 2022-09-24 09:49:36
+ * @LastEditTime: 2022-09-24 14:28:24
  * @Description: file not
 -->
 # Babel
@@ -17,16 +17,11 @@
 
 
 ## babel运行过程
+1. Babel 是一个编译器。从宏观角度看，它将运行代码分为3个阶段: 解析，转换，及生成（与其他编译器相同
 
 
 
-## babel原理
-
-
-
-# webpack
-
-[webapck原理系统文章](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg3OTYwMjcxMA==&action=getalbum&album_id=1856066636768722949&scene=173&from_msgid=2247483744&from_itemidx=1&count=3&nolastread=1#wechat_redirect)
+## [babel运行原理](https://juejin.cn/post/6844903760603398151)
 
 
 
