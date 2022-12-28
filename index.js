@@ -2,7 +2,7 @@
  * @Author: TerryMin
  * @Date: 2022-09-23 15:23:51
  * @LastEditors: TerryMin
- * @LastEditTime: 2022-09-24 10:21:48
+ * @LastEditTime: 2022-10-09 14:36:03
  * @Description: file not
  */
 let obj = new Proxy(
@@ -18,7 +18,10 @@ let obj = new Proxy(
     },
   }
 );
-obj.count = 1;
-obj.name = "zhsan";
-obj.count++;
+// obj.count = 1;
+// obj.name = "zhsan";
+// obj.count++;
 // ++obj.count;
+
+const { a: aValue, b, c: cValue = 8 } = { a: 155, b: 2 };
+console.log(aValue, b, cValue);

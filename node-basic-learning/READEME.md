@@ -2,7 +2,7 @@
  * @Author: TerryMin
  * @Date: 2022-05-31 09:09:32
  * @LastEditors: TerryMin
- * @LastEditTime: 2022-09-22 10:26:39
+ * @LastEditTime: 2022-09-27 10:34:30
  * @Description: file not
 -->
 # 资料推荐
@@ -31,7 +31,8 @@ console.log(p);
 
 4. [基于Http-service快速搭建本地服务](https://blog.csdn.net/weixin_45932733/article/details/115861292)
 
-5.
+5. Nodejs调试
+ - [使用ndb调试Nodejs项目](https://juejin.cn/post/6844903651694100487)
 
 
 
