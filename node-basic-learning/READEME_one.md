@@ -5,9 +5,6 @@
  * @LastEditTime: 2022-09-27 10:34:30
  * @Description: file not
 -->
-# 资料推荐
-《Nodejs 技术栈》[https://github.com/qufei1993/Nodejs-Roadmap]
-
 
 # Node学习
 

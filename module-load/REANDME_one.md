@@ -2,7 +2,7 @@
  * @Author: TerryMin
  * @Date: 2022-06-20 15:34:07
  * @LastEditors: TerryMin
- * @LastEditTime: 2022-12-28 13:41:12
+ * @LastEditTime: 2023-01-02 09:16:38
  * @Description: file not
 -->
 
@@ -58,7 +58,7 @@ console.log(result); // {Say: [Function (anonymous)], test: 'a' }
 
 2.  CJS 引用 ESM 模块的问题: 假设你在开发一个供别人使用的开源项目，且使用 ESM 的形式导出模块，那么问题来了 —— 目前 CJS 的 require 函数无法直接引入 ESM 包，会报错
 
-- 在 Node 中使用 ESM: Node 默认只支持 CJS 语法，针对ESM 语法的 js 文件，将无法被执行。如果想在 Node 中使用 ESM 语法，有两种可行方式:(https://juejin.cn/post/7048276970768957477)
+- 在 Node 中使用 ESM: Node 默认只支持 CJS 语法，针对 ESM 语法的 js 文件，将无法被执行。如果想在 Node 中使用 ESM 语法，有两种可行方式:(https://juejin.cn/post/7048276970768957477)
   - 2.1 在 package.json 中新增 "type": "module" 配置项:Node 会将和 package.json 文件同路径下的模块，全部当作 ESM 来解析
   - 2.2 将 ESM 的文件改为.mjs 后缀:Node 会自动地把全部 xxx.mjs 文件都作为 ESM 来解析
 
@@ -68,7 +68,6 @@ console.log(result); // {Say: [Function (anonymous)], test: 'a' }
 - CJS 输出是值的浅拷贝；ESM 输出的是值的引用，被输出模块的内部的改变会影响引用的改变。(https://zhuanlan.zhihu.com/p/33843378?group_id=947910338939686912)
 - CJS 中模块的执行需要用函数包起来，并指定一些常用的值,所以可以在 CJS 模块里直接用 **filename、**dirname。而 ESM 的标准中不包含这方面的实现,既无法使用这些变量。
 - CJS this 指向当前模块，ESM this 指向 undefined
-
 
 ## 不同模块化加载机制
 
@@ -87,4 +86,4 @@ console.log(result); // {Say: [Function (anonymous)], test: 'a' }
 
 - 默认情况下，浏览器同步加载 JavaScript 脚本，即渲染引擎遇到 < script>标签就会停下来，等到脚本执行完毕再继续向下渲染。如果是外部脚本，还必须加入脚本下载的时间。(如果脚本体积很大就会“卡死”)
 - < script>标签打开 defer 或 async 属性，脚本就会异步加载。defer 是“渲染完再执行”，async 是“下载完就执行”
-- 浏览器加载 ES6 模块时也使用< script>标签，但是要加入 type=”module”属性。对于带有 type=”module”的< script>，浏览器都是异步加载的，不会造成浏览器堵塞，即等到整个页面渲染完再执行模块脚本
+- 浏览器加载 ES6 模块时也使用< script>标签，但是要加入 type=”module”属性。对于带有 type=”module”的< script>，浏览器都是异步加载的，不会造成浏览器堵塞，即等到整个页面渲染完再执行模块脚本，等同于打开了< script>标签的 defer 属性。
