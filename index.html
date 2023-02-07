@@ -2,7 +2,7 @@
  * @Author: TerryMin
  * @Date: 2021-12-14 14:24:04
  * @LastEditors: TerryMin
- * @LastEditTime: 2022-12-05 15:44:45
+ * @LastEditTime: 2023-02-06 15:34:55
  * @Description: file not
 -->
 <!DOCTYPE html>
@@ -22,13 +22,20 @@
   </head>
 
   <body>
-    <main>
-      <div class="divh" id="divh"></div>
-    </main>
+    <form action="/upload" method="post">
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username" />
+      <br />
+      <input type="submit" name="submit" value="Submit" />
+    </form>
   </body>
   <script>
-    const divhElement = document.getElementById("divh");
-    console.log(divhElement.top);
-    console.log(divhElement.getBoundingClientRect());
+    (function (global) {
+      global.a = 12;
+    })(window);
+    (function (global) {
+      global.a = 34;
+    })(window);
+    console.log(window);
   </script>
 </html>

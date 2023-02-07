@@ -2,7 +2,7 @@
  * @Author: TerryMin
  * @Date: 2022-05-31 09:09:32
  * @LastEditors: TerryMin
- * @LastEditTime: 2022-09-27 10:34:30
+ * @LastEditTime: 2023-02-07 09:49:33
  * @Description: file not
 -->
 
@@ -26,7 +26,7 @@ console.log(p);
 - [path模块中resolve()与join区别](https://www.jb51.net/article/149676.htm)
 
 
-4. [基于Http-service快速搭建本地服务](https://blog.csdn.net/weixin_45932733/article/details/115861292)
+4. [基于Http-service快速搭建本地静态服务](https://blog.csdn.net/weixin_45932733/article/details/115861292)
 
 5. Nodejs调试
  - [使用ndb调试Nodejs项目](https://juejin.cn/post/6844903651694100487)
