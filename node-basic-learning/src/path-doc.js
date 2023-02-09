@@ -2,37 +2,46 @@
  * @Author: TerryMin
  * @Date: 2021-12-11 15:38:01
  * @LastEditors: TerryMin
- * @LastEditTime: 2022-09-22 14:28:10
+ * @LastEditTime: 2023-02-08 13:44:25
  * @Description: file not
  */
+const { log } = require("console");
 const fs = require("fs");
 const path = require("path");
 const util = require("util");
 const moduleObj = require("./util-index");
 
-console.log(moduleObj);
+// console.log(moduleObj);
+
 // 将目录解析成绝对路径
 const resolvePath = (dir) => {
-  // console.log(__dirname);
-  return path.resolve(__dirname, dir);
+  console.log(__dirname);
+  console.log(path.resolve(__dirname, dir));
 };
+// resolvePath('./indexjs');
 
 // path API 测试
 const handlePathApi = () => {
   /**
    * https://www.jb51.net/article/179721.htm
    * **/
+  const _extname=path.extname('index.js'); // 从最后一个'.'到字符串的末尾。如果最后一个部分没有'.'，或者路径是以'.'开头，则返回空字符串
+
   const _basename = path.basename("index.js", ".js"); // 返回路径的最后一个部分，即文件名。参数ext为需要截掉的后缀内容
+
   const _basenameHtml = path.basename("demo.html", ".html");
 
   const _dirPath = path.dirname("terrymin/test/index.js"); // 返回路径p所在的目录
 
-  return {
+  console.log({
+    _extname,
     _basename,
     _basenameHtml,
     _dirPath,
-  };
+  });
 };
+
+// handlePathApi();
 
 // File API 测试
 const handleFileRead = () => {
@@ -144,7 +153,7 @@ const handleDir = () => {
       }
       console.log("创建成功");
       const files = fs.readdirSync(__dirname);
-      console.log('读取文件目录:',files);
+      console.log("读取文件目录:", files);
     });
   } else {
     console.log("目录已存在");
@@ -157,5 +166,4 @@ const handleDir = () => {
     });
   }
 };
-handleDir();
-
+// handleDir();
