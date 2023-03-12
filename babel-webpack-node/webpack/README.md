@@ -2,7 +2,7 @@
  * @Author: TerryMin
  * @Date: 2022-09-24 14:28:01
  * @LastEditors: TerryMin
- * @LastEditTime: 2022-09-24 14:28:20
+ * @LastEditTime: 2023-03-12 08:21:36
  * @Description: file not
 -->
 
@@ -17,7 +17,9 @@
  - 输出资源：根据入口和模块之间的依赖关系,组装成一个个包含多个模块的 Chunk,再把每个 Chunk 转换成一个单独的文件加入到输出列表,这步是可以修改输出内容的最后机会。
  - 输出完成：在确定好输出内容后,根据配置确定输出的路径和文件名,把文件内容写入到文件系统。
 
-2. [webpack简单流程实现](https://juejin.cn/post/6844904038543130637?utm_source=gold_browser_extension#heading-17)
+2. [webpack简单流程实现](https://juejin.cn/post/6844904038543130637?utm_source=gold_browser_extension#heading-17) =>mini-webpack
 
-3. [webapck原理系统文章](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg3OTYwMjcxMA==&action=getalbum&album_id=1856066636768722949&scene=173&from_msgid=2247483744&from_itemidx=1&count=3&nolastread=1#wechat_redirect)
+3. [babel运行原理](https://juejin.cn/post/6844903760603398151)
+
+4. [webpack设计理念](https://juejin.cn/post/7170852747749621791?)
 
