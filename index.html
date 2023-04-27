@@ -2,7 +2,7 @@
  * @Author: TerryMin
  * @Date: 2021-12-14 14:24:04
  * @LastEditors: TerryMin
- * @LastEditTime: 2023-02-06 15:34:55
+ * @LastEditTime: 2023-03-14 18:52:07
  * @Description: file not
 -->
 <!DOCTYPE html>
@@ -30,12 +30,19 @@
     </form>
   </body>
   <script>
-    (function (global) {
-      global.a = 12;
-    })(window);
-    (function (global) {
-      global.a = 34;
-    })(window);
-    console.log(window);
+    function replacer(match, p1, p2, p3, offset, string) {
+      // p1 is nondigits, p2 digits, and p3 non-alphanumerics
+      return [p1, p2, p3].join(" - ");
+    }
+    var newString = "abc12345#$*%".replace(/([^\d]*)(\d*)([^\w]*)/, replacer);
+
+    const replacer1=(match, p1, p2, p3, offset, string)=> {
+      // p1 is nondigits, p2 digits, and p3 non-alphanumerics
+      console.log(match, p1, p2, p3, offset, string);
+      return [p1, p2, p3].join(" - ");
+    }
+    var newString1 = "abc12345#$*%".replace(/([^\d]*)(\d*)([^\w]*)/, replacer1);
+    console.log(newString); // abc - 12345 - #$*%
+    console.log(newString1);
   </script>
 </html>
