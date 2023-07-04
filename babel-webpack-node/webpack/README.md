@@ -2,11 +2,13 @@
  * @Author: TerryMin
  * @Date: 2022-09-24 14:28:01
  * @LastEditors: TerryMin
- * @LastEditTime: 2023-03-12 08:21:36
+ * @LastEditTime: 2023-07-03 14:23:19
  * @Description: file not
 -->
 
 # webpack
+
+[webpack](https://webpack.docschina.org/)
 
 1. webpack 构建流程
  - 初始化参数：从配置文件和 Shell 语句中读取与合并参数,得出最终的参数。
@@ -19,7 +21,8 @@
 
 2. [webpack简单流程实现](https://juejin.cn/post/6844904038543130637?utm_source=gold_browser_extension#heading-17) =>mini-webpack
 
-3. [babel运行原理](https://juejin.cn/post/6844903760603398151)
 
-4. [webpack设计理念](https://juejin.cn/post/7170852747749621791?)
+3. [webpack设计理念](https://juejin.cn/post/7170852747749621791?)
 
+
+4. [webpack命令行参数详解](https://blog.csdn.net/victoryzn/article/details/81872718)

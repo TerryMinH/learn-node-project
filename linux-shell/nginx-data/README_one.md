@@ -2,13 +2,15 @@
  * @Author: TerryMin
  * @Date: 2022-07-21 17:13:48
  * @LastEditors: TerryMin
- * @LastEditTime: 2023-05-09 14:21:30
+ * @LastEditTime: 2023-05-16 17:41:20
  * @Description: file not
 -->
 
 # nginx 访问本地资源配置
 
-一 [nginx 配置代理及设置代理服务器](https://blog.csdn.net/weixin_37541878/article/details/112269109)
+一 [nginx 常用命令](https://blog.csdn.net/yaorongke/article/details/81153716)
+
+二 [nginx 配置代理及设置代理服务器](https://blog.csdn.net/weixin_37541878/article/details/112269109)
 
 - http 结构下可以有多个 server,请求进来 确定 使用哪一个 server 由 server_name 确定.一个 server 下面可以有多个 location.
 
@@ -29,6 +31,9 @@
 
 - 属于 nginx_http_proxy_module 中的指令，用于设置代理
 
+5. [location 中 try_files](https://juejin.cn/post/7198782832177381431):
+
+- $uri 表示当前 location 后面的字符串
 
 
 ```js
