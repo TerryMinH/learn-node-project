@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server --open",
+    "start": "cross-env NODE_ENV_QDRR=test webpack-dev-server --open",
     "build": "webpack"
   },
   "keywords": [],
@@ -23,5 +23,7 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "cross-env": "^7.0.3"
+  }
 }

@@ -2,7 +2,7 @@
  * @Author: TerryMin
  * @Date: 2021-12-11 15:47:19
  * @LastEditors: TerryMin
- * @LastEditTime: 2022-06-23 16:59:04
+ * @LastEditTime: 2023-12-05 09:45:31
  * @Description: file not
  */
 const path = require('path');
@@ -10,6 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
+console.log(333, process.env.NODE_ENV_QDRR);
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -34,9 +35,13 @@ module.exports = {
     hot: true
   },
   plugins: [
+    new webpack.DefinePlugin({
+      QTRR: JSON.stringify(process.env.NODE_ENV_QDRR)
+    }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Output Management',
+      template:'template/index.html',
+      // title: 'webpack',
       inject: true, // true：默认值，script标签位于html文件的 body 底部
       hash: true, // 在打包的资源插入html会加上hash
       //  html 文件进行压缩
